@@ -20,7 +20,6 @@ export class Options {
   githubConcurrencyLimit: number
   lightTokenLimits: TokenLimits
   heavyTokenLimits: TokenLimits
-  apiBaseUrl: string
   language: string
 
   constructor(
@@ -59,7 +58,6 @@ export class Options {
     this.githubConcurrencyLimit = parseInt(githubConcurrencyLimit)
     this.lightTokenLimits = new TokenLimits(openaiLightModel)
     this.heavyTokenLimits = new TokenLimits(openaiHeavyModel)
-    this.apiBaseUrl = apiBaseUrl
     this.language = language
   }
 
@@ -82,7 +80,6 @@ export class Options {
     info(`github_concurrency_limit: ${this.githubConcurrencyLimit}`)
     info(`summary_token_limits: ${this.lightTokenLimits.string()}`)
     info(`review_token_limits: ${this.heavyTokenLimits.string()}`)
-    info(`api_base_url: ${this.apiBaseUrl}`)
     info(`language: ${this.language}`)
   }
 
